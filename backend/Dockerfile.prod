@@ -1,0 +1,22 @@
+FROM node:20-alpine
+
+RUN npm install -g pnpm
+
+WORKDIR /app
+
+COPY pnpm-lock.yaml package.json ./
+
+# Instalar solo dependencias de producción
+ENV NODE_ENV=production
+RUN pnpm install --frozen-lockfile --prod
+
+# Copiar el código fuente
+COPY . .
+
+# Compilar TypeScript a dist
+RUN pnpm build
+
+EXPOSE 4000
+
+# Comando por defecto: ejecutar el servidor compilado
+CMD ["pnpm", "start"]

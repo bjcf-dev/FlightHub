@@ -1,0 +1,21 @@
+FROM node:20-alpine
+
+# Instalar pnpm globalmente
+RUN npm install -g pnpm
+
+WORKDIR /app
+
+# Copiar dependencias y lockfile
+COPY pnpm-lock.yaml package.json ./
+
+# Instalar TODAS las dependencias (incluyendo devDependencies)
+ENV NODE_ENV=development
+RUN pnpm install --frozen-lockfile
+
+# Copiar el código fuente
+COPY . .
+
+EXPOSE 4000
+
+# Comando por defecto: hot-reload con tsx
+CMD ["pnpm", "dev"]
