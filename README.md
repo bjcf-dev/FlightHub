@@ -1,7 +1,3 @@
-Perfecto, Black 🙌. Te dejo el **README final para el frontend**, ya integrado con las secciones útiles y manteniendo el encabezado y enlaces que tenías. Este archivo reemplaza el actual `frontend/README.md` y está pensado para que cualquier desarrollador nuevo pueda levantar el proyecto sin perder tiempo.
-
----
-
 ```markdown
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/yEbgfP-q)
 
